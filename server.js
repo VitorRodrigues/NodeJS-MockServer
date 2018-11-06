@@ -14,12 +14,12 @@ mongoose.connect('mongodb://localhost/Endpoints')
 var app = express();
 var port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.raw());
 // app.use(bodyParser.json());
 var routes = require('./api/routes/EndpointMockRoutes'); //importing route
 routes(app); //register the route
 
 app.use(mockHandler)
-app.use(bodyParser.raw());
 app.use(APIHandler.fallback)
 
 // app.use(Log.logger)
