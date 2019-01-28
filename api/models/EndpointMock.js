@@ -12,11 +12,6 @@ var EndpointMockSchema = new Schema({
       type: Number,
       default: 200
   },
-  method: {
-    type: String,
-    enum: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    default: 'GET'
-  },
   responseData: {
     type: Object,
     default: {}

@@ -12,7 +12,6 @@ exports.list = function(req, res) {
 };
 
 exports.create = function(req, res) {
-  console.log('POSTED > ' + JSON.stringify(req.body))
   var newMock = new Endpoint(req.body);
   newMock.save(function(err, task) {
     if (err)

@@ -11,7 +11,7 @@ exports.fallback = function(req, res, next) {
     const apiPath = req.originalUrl
     const params = querystring.stringify(req.query)
     const url = protocol + "://" + apiHost + apiPath + ( params != "" ? "?" + params : "")
-    console.log('PROXY: ' + url)
+    console.log('FORWARDING TO: ' + req.method +  ' '+ url)
     var proxy = request(url, {method: req.method});
     req.pipe(proxy);
     proxy.pipe(res, {

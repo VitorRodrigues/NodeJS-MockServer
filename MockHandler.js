@@ -4,7 +4,7 @@ var Endpoint = require('./api/models/EndpointMock')
 module.exports = function (req, res, next) {
     let path = req.url
     let method = req.method
-    console.log("MongoDB finding path: '" + path + "'")
+    console.log(`Requested: ${method} ${path}`)
     let query = {'path': path, 'method': method}
     
     Endpoint.findOne(query, function(err, mock) {

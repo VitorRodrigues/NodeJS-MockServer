@@ -1,5 +1,5 @@
 'use strict';
 
 module.exports = {
-    host: "localhost"
+    host: "your.host.here"
 }

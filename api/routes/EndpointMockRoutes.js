@@ -1,11 +1,10 @@
 'use strict';
-var bodyParser = require('body-parser')
 
 module.exports = function(app) {
   var endpointMock = require('../controllers/MockController');
 
+  // todoList Routes
   app.route('/mocks')
-    .all(bodyParser.json())
     .get(endpointMock.list)
     .post(endpointMock.create);
 
